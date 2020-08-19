@@ -5,11 +5,24 @@
 </template>
 
 <script>
+import { getEpisodes } from '@/api'
 
 export default {
   name: 'App',
-  components: {
-    
+  data() {
+    return {
+      episodes: []
+    }
+  },
+  async mounted() {
+    await this.loadData();
+    console.log(this.episodes);
+  },
+  methods: {
+    async loadData() {
+      const data = await getEpisodes();
+      this.episodes = data.results;
+    }
   }
 }
 </script>
