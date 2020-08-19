@@ -1,31 +1,13 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/list">List</router-link> |
+      <router-link to="/details">Details</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
-import { getEpisodes } from '@/api'
-
-export default {
-  name: 'App',
-  data() {
-    return {
-      episodes: []
-    }
-  },
-  async mounted() {
-    await this.loadData();
-    console.log(this.episodes);
-  },
-  methods: {
-    async loadData() {
-      const data = await getEpisodes();
-      this.episodes = data.results;
-    }
-  }
-}
-</script>
 
 <style>
 #app {
@@ -34,6 +16,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
