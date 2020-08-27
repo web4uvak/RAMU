@@ -1,11 +1,11 @@
 import { http, reduceQuery } from '@/utils'
 
-async function getEpisodes(id = [], query = {}) {
+async function getData(type = '', id = [], query = {}) {
   try {
     id = id.join(',');
     query = reduceQuery(query);
 
-    const data = await http.GET(`episode/${id}?${query}`);
+    const data = await http.GET(`${type}/${id}?${query}`);
 
     return data;
   } catch (error) {
@@ -14,5 +14,5 @@ async function getEpisodes(id = [], query = {}) {
 }
 
 export {
-  getEpisodes
+  getData
 }

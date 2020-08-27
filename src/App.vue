@@ -1,21 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/list">List</router-link> |
-      <router-link to="/details">Details</router-link>
-    </div>
-    <router-view/>
+    <el-container class="wrapper">
+      <el-header height="auto">
+        <router-link class="logo" to="/">
+          <img src="./assets/logo.jpg" alt="">
+        </router-link>
+      </el-header>
+      <el-main>
+        <router-view/>
+      </el-main>
+    </el-container>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      activeIndex: '1'
+    }
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  display: block;
+  max-width: 150px;
+  margin: 0 auto;
 }
 
 #nav {
@@ -29,5 +46,7 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+olor: #2c3e50;
+  margin-top: 60px;
 }
 </style>

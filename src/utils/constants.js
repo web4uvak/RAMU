@@ -1,0 +1,2 @@
+export const EPISODE_DEFAULT_IMG = 'https://www.emmys.com/sites/default/files/styles/show_detail/public/logos/rick-and-morty-600x600_0.jpg?itok=GVs7s01F';
+export const LOCATION_DEFAULT_IMG = 'https://c7.hotpng.com/preview/143/321/220/rick-sanchez-morty-smith-squanchy-rick-and-morty-memory-game-get-schwifty-colander-thumbnail.jpg';
